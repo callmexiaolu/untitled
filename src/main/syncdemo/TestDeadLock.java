@@ -23,14 +23,14 @@ public class TestDeadLock {
     });
 
     public Thread thread2 = new Thread(() -> {
-        synchronized (objectB) {
+        synchronized (objectB) { //想要避免死锁，那么这里可以改为objectA
             System.out.println("进入了thread2--objectB");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            synchronized (objectA) {
+            synchronized (objectA) { //然后这里改为objectB
                 System.out.println("进入了thread2--objectA");
             }
         }

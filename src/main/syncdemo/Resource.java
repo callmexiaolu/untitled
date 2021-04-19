@@ -61,8 +61,8 @@ public class Resource {
     }
 
     public void testSyncClass1000() { //锁对象为当前的类引用
-        System.out.println("进入了testSyncClass1000" + System.currentTimeMillis());
         synchronized (Resource.class) {
+            System.out.println("进入了testSyncClass1000" + System.currentTimeMillis());
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

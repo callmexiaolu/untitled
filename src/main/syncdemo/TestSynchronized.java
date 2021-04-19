@@ -155,7 +155,7 @@ public class TestSynchronized {
          * 锁object和class---同时进入，同时输出
          * 锁object和static---同时进入，同时输出
          * 锁object和method---先进入method，输出method，再进入object，再输出object
-         * 锁static和class---同时进入，先输出static，后输出class
+         * 锁static和class---谁先执行就先输出(谁先获得锁就先输出)。两者的锁对象都是.class
          */
         //syncClass1.start();
         //syncMethod1.start();
